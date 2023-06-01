@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initiial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Hello Flask</title>
+        <style>
+            .heading{
+                background-color: purple;
+                align-items: center;
+                vertical-align: center;
+                height:fit-content;
+                width:fit-content;
+                padding:20px;
+                margin: auto;
+            }
+            .title{
+                list-style: none;
+                display:flex;
+                color:rgb(255, 228, 232);
+                margin:auto;
+                margin-right: 20px;
+                font-weight: bold;
+            }
+            .title li{
+                margin-right:40px;
+            }
+            .box{
+                
+                vertical-align: center;
+                height:fit-content;
+                width:fit-content;
+                padding:20px;
+                margin: auto;
+                display:flex;
+            }
+            .users ul{
+                list-style: none;
+                display:flex;
+                margin:auto;
+                margin-bottom:20px ;
+            }
+            .users li{
+                margin-right:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="heading">
+            <ul class="title">
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>Full Name</li>
+            </ul>
+        </div>
+        <div class="box">
+            <div class="users">
+                {% for users in users%}
+                <ul >
+                    <li>{{users['first_name']}}</li>
+                </ul>
+                {%endfor%}
+            </div>
+            <div class="users">
+                {% for users in users%}
+                <ul >
+                    <li>{{users['last_name']}}</li>
+                    
+                </ul>
+                {%endfor%}
+            </div>
+            <div class="users">
+                {% for users in users%}
+                <ul >
+                    <li>{{users['first_name']}} {{users['last_name']}} </li>
+                </ul>
+                {%endfor%}
+            </div>
+        </div>
+    </body>
+
+</html>
